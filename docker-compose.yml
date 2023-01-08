@@ -1,0 +1,13 @@
+services:
+  nginx-dmz:
+    image: sobel/nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - "/opt/apps/nginx-dmz/cache:/var/cache/nginx"
+      - "/opt/apps/nginx-dmz/logs:/var/log/nginx"
+      - "/opt/apps/nginx-dmz/config.d:/etc/nginx/config.d"
+    networks:
+      - nginx-dmz
+networks:
+  nginx-dmz:
